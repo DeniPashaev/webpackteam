@@ -1,7 +1,6 @@
 {
   "name": "webpackfront",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +18,14 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nohcho/webpackteam.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nohcho/webpackteam/issues"
+  },
+  "homepage": "https://github.com/nohcho/webpackteam#readme",
+  "description": ""
 }
