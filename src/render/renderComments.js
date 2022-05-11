@@ -2,11 +2,11 @@ import { getComments } from "../getComments";
 
 export const renderComments = () => {
     const comment = document.createElement('div');
-    const name = document.createElement("div");
+    // const name = document.createElement("div");
     const text = document.createElement("div");
     text.textContent = comment.text;
-    name.textContent = users.name;
-    comment.append(name, text);
+    // name.textContent = users.name;
+    comment.append( text);
     return comment;
 }
 
