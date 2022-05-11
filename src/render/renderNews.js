@@ -28,12 +28,16 @@ export const renderNews = () => {
         root.prepend(header)
 
         initialState.news.forEach((news) => {
-        const divNews = document.createElement('a');
-        divNews.textContent = news.title;
-        divNews.href = "#0"
-        divNews.style.color = "black"
-        divNews.style.textDecoration = "none"
-        divNews.addEventListener("click", () => getNewsById(news._id));
+        const divNews = document.createElement("div")
+        divNews.classList = "divNews"
+        const textNews = document.createElement('a');
+        textNews.textContent = news.title;
+        textNews.classList = "textNews"
+        textNews.href = "#0"
+        textNews.style.color = "black"
+        textNews.style.textDecoration = "none"
+        divNews.append(textNews)
+        textNews.addEventListener("click", () => getNewsById(news._id));
         mainDivForNews.append(divNews)
         section.append(mainDivForNews);
     })
