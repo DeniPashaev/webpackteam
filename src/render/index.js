@@ -4,17 +4,22 @@ import { initialState } from "../initialState"
 
 
 export const render = () => {
-    root.textContent = ""
+
     const root = document.querySelector("#root");
+
+    const newsList = document.createElement("div");
+
     if(Array.isArray(initialState.cats)) {
-    initialState.cats.forEach((cats)=>{
+
+    initialState.cats.forEach((cats)=> {
+        console.log(cats);
     const divCats = document.createElement("div")
     divCats.textContent = cats.name;
-    divCats.addEventListener("click", () => getCatsByNews(cats.id))
-    root.append(divCats)
-    }) 
+    divCats.addEventListener("click", () => getCatsByNews(cats._id))
+    newsList.append(divCats);
+    })
+    return newsList
 }
-return divCats
 // else {
 //     root.textContent = "" //завершить
     // .addEventListener

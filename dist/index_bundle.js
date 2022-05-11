@@ -16,7 +16,47 @@
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getCats\": () => (/* binding */ getCats)\n/* harmony export */ });\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initialState */ \"./src/initialState.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render */ \"./src/render/index.js\");\n\n\nvar getCats = function getCats() {\n  fetch(\"\").then(function (res) {\n    return res.json();\n  }).then(function (cats) {\n    _initialState__WEBPACK_IMPORTED_MODULE_0__.initialState.news = news;\n    (0,_render__WEBPACK_IMPORTED_MODULE_1__.render)();\n  });\n};\n\n//# sourceURL=webpack://webpackfront/./src/getCats.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getCats\": () => (/* binding */ getCats)\n/* harmony export */ });\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initialState */ \"./src/initialState.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render */ \"./src/render/index.js\");\n\n\nvar getCats = function getCats() {\n  fetch(\"http://localhost:3000/cats\").then(function (res) {\n    return res.json();\n  }).then(function (cats) {\n    _initialState__WEBPACK_IMPORTED_MODULE_0__.initialState.cats = cats;\n    (0,_render__WEBPACK_IMPORTED_MODULE_1__.render)();\n  });\n};\n\n//# sourceURL=webpack://webpackfront/./src/getCats.js?");
+
+/***/ }),
+
+/***/ "./src/getCatsByNews.js":
+/*!******************************!*\
+  !*** ./src/getCatsByNews.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getCatsByNews\": () => (/* binding */ getCatsByNews)\n/* harmony export */ });\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initialState */ \"./src/initialState.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render */ \"./src/render/index.js\");\n/* harmony import */ var _render_renderNews__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render/renderNews */ \"./src/render/renderNews.js\");\n\n\n\nvar getCatsByNews = function getCatsByNews(id) {\n  fetch(\"http://localhost:3000/news/cat/\" + id).then(function (res) {\n    return res.json();\n  }).then(function (cats) {\n    _initialState__WEBPACK_IMPORTED_MODULE_0__.initialState.news = cats;\n    (0,_render_renderNews__WEBPACK_IMPORTED_MODULE_2__.renderNews)();\n  });\n};\n\n//# sourceURL=webpack://webpackfront/./src/getCatsByNews.js?");
+
+/***/ }),
+
+/***/ "./src/getComments.js":
+/*!****************************!*\
+  !*** ./src/getComments.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getComments\": () => (/* binding */ getComments)\n/* harmony export */ });\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initialState */ \"./src/initialState.js\");\n/* harmony import */ var _render_renderComments__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render/renderComments */ \"./src/render/renderComments.js\");\n/* harmony import */ var _render_renderNews__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render/renderNews */ \"./src/render/renderNews.js\");\n\n\n\nvar getComments = function getComments(id) {\n  fetch(\"http://localhost:3000/news/comment/\" + id).then(function (res) {\n    return res.json();\n  }).then(function (comments) {\n    _initialState__WEBPACK_IMPORTED_MODULE_0__.initialState.comments = comments;\n    (0,_render_renderComments__WEBPACK_IMPORTED_MODULE_1__.renderComments)();\n  });\n  (0,_render_renderNews__WEBPACK_IMPORTED_MODULE_2__.renderNews)();\n};\n\n//# sourceURL=webpack://webpackfront/./src/getComments.js?");
+
+/***/ }),
+
+/***/ "./src/getNews.js":
+/*!************************!*\
+  !*** ./src/getNews.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getNews\": () => (/* binding */ getNews)\n/* harmony export */ });\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initialState */ \"./src/initialState.js\");\n/* harmony import */ var _render_renderNews__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render/renderNews */ \"./src/render/renderNews.js\");\n\n\nvar getNews = function getNews() {\n  fetch(\"http://localhost:3000/news\").then(function (res) {\n    return res.json();\n  }).then(function (news) {\n    _initialState__WEBPACK_IMPORTED_MODULE_0__.initialState.news = news;\n    (0,_render_renderNews__WEBPACK_IMPORTED_MODULE_1__.renderNews)();\n  }); //renderNews()\n};\n\n//# sourceURL=webpack://webpackfront/./src/getNews.js?");
+
+/***/ }),
+
+/***/ "./src/getNewsById.js":
+/*!****************************!*\
+  !*** ./src/getNewsById.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getNewsById\": () => (/* binding */ getNewsById)\n/* harmony export */ });\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initialState */ \"./src/initialState.js\");\n/* harmony import */ var _render_renderNews__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render/renderNews */ \"./src/render/renderNews.js\");\n\n\nvar getNewsById = function getNewsById(id) {\n  fetch(\"http://localhost:3000/news/\" + id).then(function (res) {\n    return res.json();\n  }).then(function (news) {\n    _initialState__WEBPACK_IMPORTED_MODULE_0__.initialState.news = news;\n    (0,_render_renderNews__WEBPACK_IMPORTED_MODULE_1__.renderNews)();\n  }); //renderNews()\n};\n\n//# sourceURL=webpack://webpackfront/./src/getNewsById.js?");
 
 /***/ }),
 
@@ -26,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css.css */ \"./src/css.css\");\n/* harmony import */ var _getCats__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getCats */ \"./src/getCats.js\");\n\n\n(0,_getCats__WEBPACK_IMPORTED_MODULE_1__.getCats)();\n\n//# sourceURL=webpack://webpackfront/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css.css */ \"./src/css.css\");\n/* harmony import */ var _getCats__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getCats */ \"./src/getCats.js\");\n/* harmony import */ var _getComments__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getComments */ \"./src/getComments.js\");\n/* harmony import */ var _getNews__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getNews */ \"./src/getNews.js\");\n\n\n\n\n(0,_getCats__WEBPACK_IMPORTED_MODULE_1__.getCats)();\n(0,_getNews__WEBPACK_IMPORTED_MODULE_3__.getNews)();\n(0,_getComments__WEBPACK_IMPORTED_MODULE_2__.getComments)();\n\n//# sourceURL=webpack://webpackfront/./src/index.js?");
 
 /***/ }),
 
@@ -46,7 +86,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../initialState */ \"./src/initialState.js\");\n\nvar render = function render() {\n  var root = document.querySelector(\"#root\");\n  _initialState__WEBPACK_IMPORTED_MODULE_0__.initialState.cats.forEach(function (cats) {\n    var div = document.createElement(\"div\");\n    div.textContent = cats.name;\n    root.append(div);\n  });\n};\n\n//# sourceURL=webpack://webpackfront/./src/render/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var _getCatsByNews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../getCatsByNews */ \"./src/getCatsByNews.js\");\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../initialState */ \"./src/initialState.js\");\n\n\nvar render = function render() {\n  var root = document.querySelector(\"#root\");\n  var newsList = document.createElement(\"div\");\n\n  if (Array.isArray(_initialState__WEBPACK_IMPORTED_MODULE_1__.initialState.cats)) {\n    _initialState__WEBPACK_IMPORTED_MODULE_1__.initialState.cats.forEach(function (cats) {\n      console.log(cats);\n      var divCats = document.createElement(\"div\");\n      divCats.textContent = cats.name;\n      divCats.addEventListener(\"click\", function () {\n        return (0,_getCatsByNews__WEBPACK_IMPORTED_MODULE_0__.getCatsByNews)(cats._id);\n      });\n      newsList.append(divCats);\n    });\n    return newsList;\n  } // else {\n  //     root.textContent = \"\" //завершить\n  // .addEventListener\n\n};\n\n//# sourceURL=webpack://webpackfront/./src/render/index.js?");
+
+/***/ }),
+
+/***/ "./src/render/renderComments.js":
+/*!**************************************!*\
+  !*** ./src/render/renderComments.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"renderComments\": () => (/* binding */ renderComments)\n/* harmony export */ });\n/* harmony import */ var _getComments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../getComments */ \"./src/getComments.js\");\n\nvar renderComments = function renderComments() {\n  var comment = document.createElement('div'); // const name = document.createElement(\"div\");\n\n  var text = document.createElement(\"div\");\n  text.textContent = comment.text; // name.textContent = users.name;\n\n  comment.append(text);\n  return comment;\n};\n/* document.querySelector(\"#root\");\nconst footer = document.createElement(\"div\");\nconst zagolovok1 = document.createElement(\"h1\");\nconst zagolovok2 = document.createElement(\"h1\");\nzagolovok1.textContent = \"перейти на сайт\";\nzagolovok2.textContent = \"сделать ставку\";\nfooter.append(zagolovok1, zagolovok2);\n*/\n\n//# sourceURL=webpack://webpackfront/./src/render/renderComments.js?");
+
+/***/ }),
+
+/***/ "./src/render/renderNews.js":
+/*!**********************************!*\
+  !*** ./src/render/renderNews.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"renderNews\": () => (/* binding */ renderNews)\n/* harmony export */ });\n/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ \"./src/render/index.js\");\n/* harmony import */ var _getNewsById__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../getNewsById */ \"./src/getNewsById.js\");\n/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../initialState */ \"./src/initialState.js\");\n/* harmony import */ var _renderComments__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderComments */ \"./src/render/renderComments.js\");\n\n\n\n //const root = document.getElementById(\"root\");\n\nvar renderNews = function renderNews() {\n  var root = document.querySelector(\"#root\");\n  var header = document.createElement('header');\n  header.id = 'header';\n  header.textContent = \"News\";\n  var section = document.createElement(\"div\");\n  section.id = 'section';\n  var mainDivForNews = document.createElement(\"div\");\n  root.append(header);\n\n  if (Array.isArray(_initialState__WEBPACK_IMPORTED_MODULE_2__.initialState.news)) {\n    console.log(_initialState__WEBPACK_IMPORTED_MODULE_2__.initialState);\n    root.textContent = \"\";\n    root.prepend(header);\n    _initialState__WEBPACK_IMPORTED_MODULE_2__.initialState.news.forEach(function (news) {\n      var divNews = document.createElement('div');\n      divNews.textContent = news.title;\n      divNews.addEventListener(\"click\", function () {\n        return (0,_getNewsById__WEBPACK_IMPORTED_MODULE_1__.getNewsById)(news._id);\n      });\n      mainDivForNews.append(divNews);\n      section.append(mainDivForNews);\n    });\n    section.append((0,_index__WEBPACK_IMPORTED_MODULE_0__.render)());\n    root.append(section);\n  } else {\n    root.textContent = \"\";\n    var title = document.createElement('title');\n    title.textContent = _initialState__WEBPACK_IMPORTED_MODULE_2__.initialState.news.title;\n    var text = document.createElement('div');\n    text.textContent = _initialState__WEBPACK_IMPORTED_MODULE_2__.initialState.news.text;\n    root.append(header);\n    mainDivForNews.append(title, text, (0,_renderComments__WEBPACK_IMPORTED_MODULE_3__.renderComments)(), (0,_index__WEBPACK_IMPORTED_MODULE_0__.render)());\n    section.append(mainDivForNews);\n    root.append(section, (0,_renderComments__WEBPACK_IMPORTED_MODULE_3__.renderComments)());\n  }\n};\nconsole.log(_initialState__WEBPACK_IMPORTED_MODULE_2__.initialState.news.text);\n\n//# sourceURL=webpack://webpackfront/./src/render/renderNews.js?");
 
 /***/ }),
 
@@ -56,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpackfront/./src/css.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"#root {\\n    width: 800px;\\n    margin: auto;\\n}\\n\\n#header{\\n    font-size: 50px;\\n    font-weight: 800;\\n    text-align: center;\\n    border-bottom: 1px solid black;\\n}\\n\\n#section {\\n    display: flex;\\n    justify-content: space-between;\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpackfront/./src/css.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 

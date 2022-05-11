@@ -1,8 +1,10 @@
+
 import { initialState } from "./initialState"
 import { renderNews } from "./render/renderNews"
 
-export const getNews = () => {
-    fetch("http://localhost:3000/news")
+
+export const getNewsById = (id) => {
+    fetch("http://localhost:3000/news/" + id)
     .then((res) => res.json())
     .then((news) => {
     initialState.news = news
