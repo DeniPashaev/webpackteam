@@ -2,11 +2,11 @@ import { initialState } from "./initialState"
 import { render } from "./render";
 
 
-export const getCats = () => {
-    fetch("")
+export const getCatsByNews = (id) => {
+    fetch("wrewrwqe" + id)
     .then((res) => res.json())
     .then((cats) => {
-    initialState.cats = cats;
+    initialState.news = cats;
     render()
     })
 }
