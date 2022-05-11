@@ -13,11 +13,12 @@ export const render = () => {
 
     initialState.cats.forEach((cats)=> {
        // console.log(cats);
-    const divCats = document.createElement("a")
-    divCats.id = "Cats"
-    divCats.href = "#0"
-    divCats.textContent = cats.name;
-    
+    const divCats = document.createElement("div")
+    const text = document.createElement("a")
+    text.id = "Cats"
+    text.href = "#0"
+    text.textContent = cats.name;
+    divCats.append(text)
     divCats.addEventListener("click", () => getCatsByNews(cats._id))
     newsList.append(divCats);
     })

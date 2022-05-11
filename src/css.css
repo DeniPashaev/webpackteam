@@ -64,3 +64,7 @@ body {
     color:rgb(103, 104, 99);
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6)
 }
+
+.divNews {
+   padding-bottom: 5px;
+}
