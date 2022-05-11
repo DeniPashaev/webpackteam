@@ -36,5 +36,10 @@
     text-decoration: none;
     width: 100px;
     text-align: center;
+    
 }
 
+#Cats:active {
+    color:rgb(103, 104, 99);
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6)
+}
