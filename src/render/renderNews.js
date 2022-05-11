@@ -2,7 +2,7 @@ import { render } from "./index";
 import { getNewsById } from "../getNewsById";
 import { initialState } from "../initialState";
 import { renderComments } from "./renderComments";
-
+import { getNews } from "../getNews";
 
 //const root = document.getElementById("root");
 export const renderNews = () => {
@@ -16,34 +16,44 @@ export const renderNews = () => {
     const section = document.createElement("div")
     section.id = 'section'    
     const mainDivForNews = document.createElement("div")
+    mainDivForNews.className = "mainDivForNews"
     root.append(header)
+    header.addEventListener("click", ()=>
+    
+    getNews()
+)
     if (Array.isArray(initialState.news)){
-        console.log(initialState)
+       console.log(initialState)
         root.textContent = ""
         root.prepend(header)
 
         initialState.news.forEach((news) => {
-        const divNews = document.createElement('div');
+        const divNews = document.createElement('a');
         divNews.textContent = news.title;
+        divNews.href = "#0"
+        divNews.style.color = "black"
+        divNews.style.textDecoration = "none"
         divNews.addEventListener("click", () => getNewsById(news._id));
         mainDivForNews.append(divNews)
         section.append(mainDivForNews);
     })
     section.append(render())
     root.append(section);
+    
 } else {
 
    root.textContent = ""
 
-    const title = document.createElement('title');
+    const title = document.createElement('div');
     title.textContent = initialState.news.title;
     
     const text = document.createElement('div')
     text.textContent = initialState.news.text
     root.append(header)
-    mainDivForNews.append( title, text, renderComments(), render())
-    section.append(mainDivForNews)
-    root.append(section, renderComments())
+    mainDivForNews.append( title, text)
+    //renderComments()
+    section.append(mainDivForNews, render())
+    root.append(section)
+    
 }
 }
-console.log(initialState.news.text)

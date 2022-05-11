@@ -1,13 +1,19 @@
 import { getComments } from "../getComments";
+import { initialState } from "../initialState";
+
 
 export const renderComments = () => {
     const comment = document.createElement('div');
     // const name = document.createElement("div");
+
+    initialState.comments.forEach((com)=>{
+        console.log(1);
     const text = document.createElement("div");
-    text.textContent = comment.text;
+    text.textContent = com.text;
     // name.textContent = users.name;
-    comment.append( text);
-    return comment;
+    comment.append(text);
+    
+    })
 }
 
 /* document.querySelector("#root");

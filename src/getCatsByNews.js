@@ -1,3 +1,4 @@
+import { getComments } from "./getComments";
 import { initialState } from "./initialState"
 import { render } from "./render";
 import { renderNews } from "./render/renderNews";

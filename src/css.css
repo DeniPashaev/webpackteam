@@ -8,9 +8,33 @@
     font-weight: 800;
     text-align: center;
     border-bottom: 1px solid black;
+    cursor: pointer;
+    color:#444;
+    border:1px solid #CCC;
+    background:#DDD;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor:pointer;
+    vertical-align:middle;
+}
+
+#header:active {
+    color:rgb(246, 255, 0);
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6)
 }
 
 #section {
     display: flex;
     justify-content: space-between;
 }
+
+#Cats{
+    background-color: black;
+    color: white;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+}
+
