@@ -1,4 +1,5 @@
 import { initialState } from "./initialState"
+import { renderComments } from "./render/renderComments";
 
 export const getComments = () => {
     fetch("")
@@ -7,4 +8,3 @@ export const getComments = () => {
         initialState.comments = comments;
     })
 }
- 
