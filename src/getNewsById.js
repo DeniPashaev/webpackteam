@@ -9,7 +9,7 @@ export const getNewsById = (id) => {
     .then((res) => res.json())
     .then((news) => {
     initialState.news = news
-    getComments()
+    getComments(id)
     renderNews()
 })
     //renderNews()

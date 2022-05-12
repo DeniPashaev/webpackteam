@@ -57,7 +57,6 @@ body {
     text-decoration: none;
     width: 100px;
     text-align: center;
-    
 }
 
 #Cats:active {
@@ -67,4 +66,49 @@ body {
 
 .divNews {
    padding-bottom: 5px;
+}
+
+.comment {
+margin-top: 8px;
+}
+
+.footer {
+    background-color: grey;
+    margin-top: 500px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.zagolovok1 {
+    color: #d3ca1f;
+    font-weight: 500;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    }
+    .zagolovok1:hover {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.zagolovok2 {
+    color: #d3ca1f;
+    font-weight: 500;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    }
+    .zagolovok2:hover {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.img {
+    width: 50px;
+    
 }

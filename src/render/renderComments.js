@@ -1,9 +1,8 @@
-import { getComments } from "../getComments";
 import { initialState } from "../initialState";
-
 
 export const renderComments = () => {
     const comment = document.createElement('div');
+    comment.classList = "comment"
     // const name = document.createElement("div");
 
     if(Array.isArray(initialState.comments)) {
@@ -21,11 +20,5 @@ export const renderComments = () => {
 return comment
 }
 
-/* document.querySelector("#root");
-const footer = document.createElement("div");
-const zagolovok1 = document.createElement("h1");
-const zagolovok2 = document.createElement("h1");
-zagolovok1.textContent = "перейти на сайт";
-zagolovok2.textContent = "сделать ставку";
-footer.append(zagolovok1, zagolovok2);
-*/
+document.querySelector("#root");
+

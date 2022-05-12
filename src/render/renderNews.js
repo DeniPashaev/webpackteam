@@ -4,7 +4,6 @@ import { initialState } from "../initialState";
 import { renderComments } from "./renderComments";
 import { getNews } from "../getNews";
 
-//const root = document.getElementById("root");
 export const renderNews = () => {
 
 
@@ -17,6 +16,21 @@ export const renderNews = () => {
     section.id = 'section'    
     const mainDivForNews = document.createElement("div")
     mainDivForNews.className = "mainDivForNews"
+    const footer = document.createElement("div");
+    footer.classList = "footer"
+    const zagolovok1 = document.createElement("a");
+    const zagolovok2 = document.createElement("a");
+    const img = document.createElement("img")
+    img.src = "/icon/imgonline-com-ua-Transparent-backgr-nkatLlqAM31KE copy.png"
+    zagolovok1.classList = "zagolovok1"
+    zagolovok2.classList = "zagolovok2";
+    img.classList = "img"
+    zagolovok1.href = "#0";
+    zagolovok2.href =  "#0";
+    zagolovok1.textContent = "Связаться с нами";
+    zagolovok2.textContent = "Мобильное приложение";
+
+    footer.append(zagolovok1,img, zagolovok2);
     root.append(header)
     header.addEventListener("click", ()=>
     
@@ -42,7 +56,7 @@ export const renderNews = () => {
         section.append(mainDivForNews);
     })
     section.append(render())
-    root.append(section);
+    root.append(section, footer);
     
 } else {
 
@@ -57,7 +71,7 @@ export const renderNews = () => {
     mainDivForNews.append( title, text, renderComments())
     
     section.append(mainDivForNews, render())
-    root.append(section)
+    root.append(section, footer)
     
 }
 }

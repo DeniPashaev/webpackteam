@@ -1,11 +1,7 @@
 import { getCatsByNews } from "../getCatsByNews";
 import { initialState } from "../initialState"
 
-
-
 export const render = () => {
-
-    const root = document.querySelector("#root");
 
     const newsList = document.createElement("div");
 
