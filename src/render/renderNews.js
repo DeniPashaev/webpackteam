@@ -54,8 +54,8 @@ export const renderNews = () => {
     const text = document.createElement('div')
     text.textContent = initialState.news.text
     root.append(header)
-    mainDivForNews.append( title, text)
-    //renderComments()
+    mainDivForNews.append( title, text, renderComments())
+    
     section.append(mainDivForNews, render())
     root.append(section)
     
